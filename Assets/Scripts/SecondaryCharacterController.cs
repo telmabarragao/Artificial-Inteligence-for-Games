@@ -11,7 +11,7 @@ public class SecondaryCharacterController : MonoBehaviour {
     private const float MAX_ACCELERATION = 100.0f;
     private const float MAX_SPEED = 10.0f;
 	private const float DRAG = 0.1f;
-	private const float AVOID_MARGIN = 50.0f;
+	private const float AVOID_MARGIN = 1000000000.0f;
 	private const float MAX_LOOK_AHEAD = 100.0f;
 	private const float SEPARATION_FACTOR = 500.0f;
 	private const float RADIUS_SEPARATION = 20.0f;
@@ -63,7 +63,6 @@ public class SecondaryCharacterController : MonoBehaviour {
                 Character = this.character.KinematicData,
                 DebugColor = Color.magenta
             };
-
 			this.blendedMovement.Movements.Add(new MovementWithWeight(avoidObstacleMovement, 10000000000000000000000.0f));
         }
 
