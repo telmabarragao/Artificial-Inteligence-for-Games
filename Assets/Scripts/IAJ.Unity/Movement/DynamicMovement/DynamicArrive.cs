@@ -16,7 +16,7 @@ namespace Assets.Scripts.IAJ.Unity.Movement.DynamicMovement
 
 		public DynamicArrive() 
 		{
-			this.maxSpeed = 20.0f;
+			this.maxSpeed = 10.0f;
 			this.stopRadius = 1;
 			this.slowRadius = 5;
 		}

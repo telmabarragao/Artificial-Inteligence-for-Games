@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class SecondaryCharacterController : MonoBehaviour {
 
-	public const float X_WORLD_SIZE = 55;
-	public const float Z_WORLD_SIZE = 32.5f;
+	public const float X_WORLD_SIZE = 100;
+	public const float Z_WORLD_SIZE = 65.0f;
     private const float MAX_ACCELERATION = 100.0f;
-    private const float MAX_SPEED = 20.0f;
+    private const float MAX_SPEED = 10.0f;
 	private const float DRAG = 0.1f;
 	private const float AVOID_MARGIN = 50.0f;
 	private const float MAX_LOOK_AHEAD = 100.0f;
@@ -115,20 +115,7 @@ public class SecondaryCharacterController : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 		MovementWithWeight mouseSeek = null;
-		if (Input.GetMouseButtonDown(0))
-		{
-			target.Position = new Vector3((((Input.mousePosition.x * X_WORLD_SIZE) / Screen.width) - (X_WORLD_SIZE / 2)), 0, (((Input.mousePosition.y * Z_WORLD_SIZE) / Screen.height) - (Z_WORLD_SIZE / 2)));
-			Debug.Log (target.Position);
-			var seekToPointMovement = new DynamicArrive()
-			{
-				Character = this.character.KinematicData,
-				MaxAcceleration = MAX_ACCELERATION,
-				Target = target
-			};
-			mouseSeek = new MovementWithWeight (seekToPointMovement, 0.1f);
-			this.blendedMovement.Movements.Add(mouseSeek);
-		}
-		else if (Input.GetMouseButton(0))
+		if (Input.GetMouseButton(0))
 		{
 			target.Position = new Vector3((((Input.mousePosition.x * X_WORLD_SIZE) / Screen.width) - (X_WORLD_SIZE / 2)), 0, (((Input.mousePosition.y * Z_WORLD_SIZE) / Screen.height) - (Z_WORLD_SIZE / 2)));
 			Debug.Log (target.Position);

@@ -20,7 +20,6 @@ public class SceneManager : MonoBehaviour
     private BlendedMovement Blended { get; set; }
     private PriorityMovement Priority { get; set; }
 
-    private MainCharacterController mainCharacterController;
     private List<SecondaryCharacterController> secondaryCharacterControllers;
 
 	// Use this for initialization
