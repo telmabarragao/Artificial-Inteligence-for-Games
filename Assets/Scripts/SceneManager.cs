@@ -20,22 +20,22 @@ public class SceneManager : MonoBehaviour
     private BlendedMovement Blended { get; set; }
     private PriorityMovement Priority { get; set; }
 
-    private List<SecondaryCharacterController> secondaryCharacterControllers;
+    private List<SecondaryCharacterController> flockControllers;
 
 	// Use this for initialization
 	void Start () 
 	{
 	    var obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
 
-	    this.secondaryCharacterControllers = this.CloneSecondaryCharacters(this.secondaryCharacterGameObject, 20, obstacles);
-        this.secondaryCharacterControllers.Add(this.secondaryCharacterGameObject.GetComponent<SecondaryCharacterController>());
+	    this.flockControllers = this.CloneSecondaryCharacters(this.secondaryCharacterGameObject, 20, obstacles);
+        this.flockControllers.Add(this.secondaryCharacterGameObject.GetComponent<SecondaryCharacterController>());
 
         //LINQ expression with a lambda function, returns an array with the DynamicCharacter for each secondary character controler
-        var characters = this.secondaryCharacterControllers.Select(cc => cc.character).ToList();
+        var characters = this.flockControllers.Select(cc => cc.character).ToList();
         //add the character corresponding to the main character
 
         //initialize all secondary characters
-	    foreach (var characterController in this.secondaryCharacterControllers)
+	    foreach (var characterController in this.flockControllers)
 	    {
             characterController.InitializeMovement(obstacles, characters);
 	    }

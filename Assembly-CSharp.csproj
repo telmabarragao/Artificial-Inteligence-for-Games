@@ -79,7 +79,6 @@
      <Compile Include="Assets\Scripts\IAJ.Unity\Util\MathConstants.cs" />
      <Compile Include="Assets\Scripts\IAJ.Unity\Util\MathHelper.cs" />
      <Compile Include="Assets\Scripts\IAJ.Unity\Util\RandomHelper.cs" />
-     <Compile Include="Assets\Scripts\MainCharacterController.cs" />
      <Compile Include="Assets\Scripts\SceneManager.cs" />
      <Compile Include="Assets\Scripts\SecondaryCharacterController.cs" />
  <Reference Include="UnityEngine.UI">
