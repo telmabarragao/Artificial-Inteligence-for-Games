@@ -9,7 +9,7 @@ namespace Assets.Scripts.IAJ.Unity.Movement.DynamicMovement
 
 		public override string Name
 		{
-			get { return "Seek"; }
+			get { return "Separation"; }
 		}
 
 		public List<DynamicCharacter> Flock;
